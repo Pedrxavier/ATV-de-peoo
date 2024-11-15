@@ -1,0 +1,34 @@
+class Empregado:
+    def __init__(self, nome, cpf, salario):
+        self._nome = nome
+        self._cpf = cpf
+        self._salario = salario
+
+    def getNome(self): return self._nome
+    def setNome(self, nome): self._nome = nome
+
+    def getCpf(self): return self._cpf
+    def setCpf(self, cpf): self._cpf = cpf
+
+    def getSalario(self): return self._salario
+    def setSalario(self, salario): self._salario = salario
+
+    def calcularDescontos(self):
+        if self._salario > 8000:
+            desconto = 0.35 * self._salario
+        elif 4000 < self._salario <= 8000:
+            desconto = 0.30 * self._salario
+        else:
+            desconto = 0.20 * self._salario
+        print(f"O valor do seu desconto é {desconto:.2f}")
+
+nome = input("Digite o nome do empregado: ")
+cpf = int(input("Digite o CPF do empregado: "))
+salario = float(input("Digite o salário do empregado: "))
+
+empregado = Empregado(nome, cpf, salario)
+empregado.calcularDescontos()
+
+novo_salario = float(input("Digite o novo salário para o empregado: "))
+empregado.setSalario(novo_salario)
+print(f"O novo salário é {empregado.getSalario():.2f}")
