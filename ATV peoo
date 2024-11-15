@@ -1,3 +1,5 @@
+#Pedro Henrique 
+#Isac Freire
 class Empregado:
     def __init__(self, nome, cpf, salario):
         self._nome = nome
